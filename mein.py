@@ -53,8 +53,19 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        # Check for mouse clicks
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            # Check if mouse is on rect
+            if rect1.collidepoint(event.pos):
+                print("!")
+                screen_white = True  # Turn screen white on rect1 click
+            elif rect2.collidepoint(event.pos):
+                print("2!")
+                screen_white = True  # Turn screen white on rect2 click
 
-    # Update the display
+  
+
+    # Update za display
     pygame.display.flip()
     clock.tick(FPS)
 
